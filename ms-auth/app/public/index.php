@@ -1,15 +1,11 @@
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
+<?php
 use Slim\Factory\AppFactory;
-
-require __DIR__ . '/../vendor/autoload.php';
-
+require __DIR__ . '/../../vendor/autoload.php';
+require __DIR__ . '/../config/conexion.php';
 $app = AppFactory::create();
-
-$app->get('/', function (Request $request, Response $response, $args) {
-    $response->getBody()->write("Hello world!");
-    return $response;
-});
-
+$cors = require __DIR__ . '/../middlewares/cors_middleware.php';
+$cors($app);
+$endpoints = require __DIR__ . '/../aunteticacion/presentation/routers/endpoins.php';
+$endpoints($app);
 $app->run();
 
