@@ -1,0 +1,77 @@
+@baseUrl =http://localhost:8002
+
+### Listar mesas
+GET {{baseUrl}}/mesas
+
+### Obtener mesa
+GET {{baseUrl}}/mesas/1
+
+### Crear mesa
+POST {{baseUrl}}/mesas
+Content-Type: application/json
+
+{
+    "numero": "MESA-5",
+    "capacidad": 4
+}
+
+### Actualizar mesa
+PUT {{baseUrl}}/mesas/1
+Content-Type: application/json
+
+{
+    "capacidad": 6,
+    "estado": "disponible"
+}
+
+### Cambiar estado de mesa
+PATCH {{baseUrl}}/mesas/1/estado
+Content-Type: application/json
+
+{
+    "estado": "ocupada"
+}
+
+### Listar reservas
+GET {{baseUrl}}/reservas
+
+### Listar reservas por fecha
+GET {{baseUrl}}/reservas/fecha/2026-06-13
+
+### Listar reservas por cliente
+GET {{baseUrl}}/reservas/cliente/Carlos
+
+### Listar reservas por estado
+GET {{baseUrl}}/reservas/estado/pendiente
+
+### Obtener reserva
+GET {{baseUrl}}/reservas/1
+
+### Crear reserva
+POST {{baseUrl}}/reservas
+Content-Type: application/json
+
+{
+    "nombre_cliente": "Martha Villamil",
+    "telefono_cliente": "3001234567",
+    "cantidad_personas": 4,
+    "fecha": "2026-06-13",
+    "hora": "19:00:00",
+    "observaciones": "Mesa cerca a la ventana",
+    "mesa_id": 2
+}
+
+### Actualizar reserva
+PUT {{baseUrl}}/reservas/1
+Content-Type: application/json
+
+{
+    "fecha": "2026-06-14",
+    "hora": "20:00:00",
+    "mesa_id": 3,
+    "cantidad_personas": 3,
+    "observaciones": "Actualización de reserva"
+}
+
+### Cancelar reserva
+PATCH {{baseUrl}}/reservas/1/cancelar

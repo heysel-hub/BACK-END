@@ -1,0 +1,40 @@
+@baseUrl = http://localhost:8003
+
+### Listar productos
+GET {{baseUrl}}/productos
+
+### Listar productos disponibles
+GET {{baseUrl}}/productos/disponibles
+
+### Listar por categoria
+GET {{baseUrl}}/productos/categoria/1
+
+### Obtener producto
+GET {{baseUrl}}/productos/1
+
+### Crear producto
+POST {{baseUrl}}/productos
+Content-Type: application/json
+
+{
+    "nombre": "Ensalada César",
+    "descripcion": "Ensalada fresca con aderezo césar",
+    "precio": 15000,
+    "disponible": true,
+    "categoria_id": 1
+}
+
+### Actualizar producto
+PUT {{baseUrl}}/productos/1
+Content-Type: application/json
+
+{
+    "nombre": "Ensalada César",
+    "descripcion": "Ensalada fresca con aderezo césar",
+    "precio": 18000,
+    "disponible": true,
+    "categoria_id": 1
+}
+
+### Eliminar producto
+DELETE {{baseUrl}}/productos/1

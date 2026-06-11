@@ -1,0 +1,27 @@
+@baseUrl = http://localhost:8001
+
+### Login con usuario
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+    "identificador": "admin",
+    "contrasena": "admin123"
+}
+
+### Login con correo
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+    "identificador": "admin@restaurante.com",
+    "contrasena": "admin123"
+}
+
+### Validar sesion
+GET {{baseUrl}}/validar
+Authorization: Bearer TU_TOKEN_AQUI
+
+### Logout
+POST {{baseUrl}}/logout
+Authorization: Bearer TU_TOKEN_AQUI

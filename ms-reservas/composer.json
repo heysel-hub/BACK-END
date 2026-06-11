@@ -5,8 +5,11 @@
         "illuminate/database": "^12.61"
     },
     "autoload": {
-    "psr-4": {
-        "App\\": "app/gestion_reservas"
+        "psr-4": {
+            "App\\Controllers\\": "app/gestion_reservas/controllers/",
+            "App\\Models\\": "app/gestion_reservas/models/",
+            "App\\Presentation\\Repositories\\": "app/gestion_reservas/presentation/repositories/"
+        }
     }
-}
+    
 }

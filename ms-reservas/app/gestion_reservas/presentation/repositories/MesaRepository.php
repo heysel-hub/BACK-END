@@ -3,18 +3,18 @@ declare(strict_types=1);
 
 namespace App\Presentation\Repositories;
 
-use App\Controllers\PedidoController;
+use App\Controllers\MesaController;
 use Exception;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-class PedidosRepository extends AbstractRepository
+class MesaRepository extends AbstractRepository
 {
-    private PedidoController $controller;
+    private MesaController $controller;
 
     public function __construct()
     {
-        $this->controller = new PedidoController();
+        $this->controller = new MesaController();
     }
 
     public function listar(Request $request, Response $response): Response
@@ -24,7 +24,7 @@ class PedidosRepository extends AbstractRepository
 
             return $this->json($response, [
                 'success' => true,
-                'message' => 'Pedidos obtenidos correctamente.',
+                'message' => 'Mesas obtenidas correctamente.',
                 'data'    => $result,
             ], 200);
 
@@ -40,7 +40,7 @@ class PedidosRepository extends AbstractRepository
 
             return $this->json($response, [
                 'success' => true,
-                'message' => 'Pedido obtenido correctamente.',
+                'message' => 'Mesa obtenida correctamente.',
                 'data'    => $result,
             ], 200);
 
@@ -57,7 +57,7 @@ class PedidosRepository extends AbstractRepository
 
             return $this->json($response, [
                 'success' => true,
-                'message' => 'Pedido creado correctamente.',
+                'message' => 'Mesa creada correctamente.',
                 'data'    => $result,
             ], 201);
 
@@ -66,15 +66,15 @@ class PedidosRepository extends AbstractRepository
         }
     }
 
-    public function actualizarEstado(Request $request, Response $response, array $args): Response
+    public function actualizar(Request $request, Response $response, array $args): Response
     {
         try {
             $data   = $this->obtenerDatos($request);
-            $result = $this->controller->actualizarEstado((int) $args['id'], $data);
+            $result = $this->controller->actualizar((int) $args['id'], $data);
 
             return $this->json($response, [
                 'success' => true,
-                'message' => 'Estado del pedido actualizado correctamente.',
+                'message' => 'Mesa actualizada correctamente.',
                 'data'    => $result,
             ], 200);
 
@@ -83,14 +83,16 @@ class PedidosRepository extends AbstractRepository
         }
     }
 
-    public function eliminar(Request $request, Response $response, array $args): Response
+    public function cambiarEstado(Request $request, Response $response, array $args): Response
     {
         try {
-            $this->controller->eliminar((int) $args['id']);
+            $data   = $this->obtenerDatos($request);
+            $result = $this->controller->cambiarEstado((int) $args['id'], $data['estado']);
 
             return $this->json($response, [
                 'success' => true,
-                'message' => 'Pedido eliminado correctamente.',
+                'message' => 'Estado de mesa actualizado correctamente.',
+                'data'    => $result,
             ], 200);
 
         } catch (Exception $e) {

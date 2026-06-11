@@ -5,9 +5,11 @@
         "illuminate/database": "^12.61"
     },
     "autoload": {
-    "psr-4": {
-        "App\\": "app/autenticacion/"
-    }
-}
-
+        "psr-4": {
+            "App\\Controllers\\": "app/autenticacion/controllers/",
+            "App\\Models\\": "app/autenticacion/models/",
+            "App\\Presentation\\Repositories\\": "app/autenticacion/presentation/repositories/"
+        }
+   }
+   
 }

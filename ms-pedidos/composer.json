@@ -6,7 +6,9 @@
     },
     "autoload": {
     "psr-4": {
-        "App\\": "app/gestion_pedidos"
+        "App\\Controllers\\": "app/gestion_pedidos/controllers/",
+        "App\\Models\\": "app/gestion_pedidos/models/",
+        "App\\Presentation\\Repositories\\": "app/gestion_pedidos/presentation/repositories/"
     }
 }
 }
