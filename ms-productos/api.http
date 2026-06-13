@@ -17,9 +17,9 @@ POST {{baseUrl}}/productos
 Content-Type: application/json
 
 {
-    "nombre": "Ensalada César",
-    "descripcion": "Ensalada fresca con aderezo césar",
-    "precio": 15000,
+    "nombre": "Limonada Natural",
+    "descripcion": "Bebida natural de limón ",
+    "precio": 8000,
     "disponible": true,
     "categoria_id": 1
 }
@@ -29,11 +29,11 @@ PUT {{baseUrl}}/productos/1
 Content-Type: application/json
 
 {
-    "nombre": "Ensalada César",
-    "descripcion": "Ensalada fresca con aderezo césar",
-    "precio": 18000,
+    "nombre": "Hamburguesa Especial",
+    "descripcion": "Hamburguesa con queso y tocineta",
+    "precio": 28000,
     "disponible": true,
-    "categoria_id": 1
+    "categoria_id": 3
 }
 
 ### Eliminar producto

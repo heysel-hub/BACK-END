@@ -15,7 +15,7 @@ Content-Type: application/json
 
 {
     "mesa_id": 1,
-    "fecha": "2026-06-13",
+    "fecha": "2026-09-05",
     "hora": "12:00:00",
     "detalles": [
         {

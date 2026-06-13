@@ -53,11 +53,11 @@ Content-Type: application/json
 
 {
     "nombre_cliente":"Luisa Salgado",
-    "telefono_cliente": "3001234567",
+    "telefono_cliente": "3173614085",
     "cantidad_personas": 4,
-    "fecha": "2026-06-13",
-    "hora": "19:00:00",
-    "observaciones": "Mesa cerca a la ventana",
+    "fecha": "2026-09-05",
+    "hora": "10:00:00",
+    "observaciones": "Mesa decorada",
     "mesa_id": 2
 }
 
@@ -66,7 +66,7 @@ PUT {{baseUrl}}/reservas/1
 Content-Type: application/json
 
 {
-    "fecha": "2026-06-14",
+    "fecha": "2026-09-06",
     "hora": "20:00:00",
     "mesa_id": 3,
     "cantidad_personas": 3,
