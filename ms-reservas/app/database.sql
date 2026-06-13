@@ -1,5 +1,5 @@
-CREATE DATABASE ms_reservas;
-USE ms_reservas;
+CREATE DATABASE ms_reservas_db;
+USE ms_reservas_db;
 CREATE TABLE mesas ( 
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
     numero VARCHAR(20) NOT NULL UNIQUE, 

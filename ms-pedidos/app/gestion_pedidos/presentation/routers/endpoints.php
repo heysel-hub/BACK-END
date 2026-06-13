@@ -8,6 +8,15 @@ use App\Presentation\Repositories\PedidosRepository;
 return function (App $app): void {
     $repository = new PedidosRepository();
 
+    $app->get('/', function ($request, $response) {
+    $response->getBody()->write(json_encode([
+        'status' => 'ok',
+        'microservicio' => 'Gestión de Pedidos funcionando'
+    ]));
+
+    return $response->withHeader('Content-Type', 'application/json');
+});
+
     $app->group('/pedidos', function (RouteCollectorProxy $group) use ($repository) {
         $group->get('', [$repository, 'listar']);
         $group->post('', [$repository, 'crear']);

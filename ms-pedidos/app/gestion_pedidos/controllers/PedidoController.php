@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Controllers;
@@ -201,6 +202,8 @@ class PedidoController extends AbstractController
         if (!$pedido) {
             throw new Exception('Pedido no encontrado.', 404);
         }
+        DetallePedido::where('pedido_id', $id)->delete();
+
         $pedido->delete();
     }
 
@@ -218,6 +221,5 @@ class PedidoController extends AbstractController
         $this->validarRequerido($data, 'mesa_id', 'La mesa es obligatoria.');
         $this->validarRequerido($data, 'fecha', 'La fecha es obligatoria.');
         $this->validarRequerido($data, 'hora', 'La hora es obligatoria.');
-
-        }
+    }
 }

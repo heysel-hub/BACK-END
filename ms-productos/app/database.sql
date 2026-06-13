@@ -1,5 +1,5 @@
-CREATE DATABASE ms_productos ;
-USE ms_productos ;
+CREATE DATABASE ms_productos_db; ;
+USE ms_productos_db;
 CREATE TABLE categorias ( 
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
     nombre VARCHAR(100) NOT NULL UNIQUE, 

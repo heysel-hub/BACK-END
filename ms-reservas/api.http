@@ -52,7 +52,7 @@ POST {{baseUrl}}/reservas
 Content-Type: application/json
 
 {
-    "nombre_cliente": "Martha Villamil",
+    "nombre_cliente":"Luisa Salgado",
     "telefono_cliente": "3001234567",
     "cantidad_personas": 4,
     "fecha": "2026-06-13",

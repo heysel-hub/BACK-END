@@ -1,5 +1,5 @@
-CREATE DATABASE ms_pedidos;
-USE ms_pedidos;
+CREATE DATABASE ms_pedidos_db;
+USE ms_pedidos_db;
 
 CREATE TABLE pedidos (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,

@@ -9,7 +9,7 @@ $capsule->addConnection([
     'driver'    => 'mysql',
     'host'      => '127.0.0.1',
     'port'      => 3306,
-    'database'  => 'ms_productos',
+    'database'  => 'ms_productos_db',
     'username'  => 'root',
     'password'  => 'BASES202610',
     'charset'   => 'utf8mb4',

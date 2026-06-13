@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 use Slim\App;
@@ -9,6 +10,15 @@ use App\Presentation\Repositories\ReservaRepository;
 return function (App $app): void {
     $mesaRepository   = new MesaRepository();
     $reservaRepository = new ReservaRepository();
+
+    $app->get('/', function ($request, $response) {
+    $response->getBody()->write(json_encode([
+        'status' => 'ok',
+        'microservicio' => 'Gestión de Reservas funcionando'
+    ]));
+
+    return $response->withHeader('Content-Type', 'application/json');
+});
 
     $app->group('/mesas', function (RouteCollectorProxy $group) use ($mesaRepository) {
         $group->get('', [$mesaRepository, 'listar']);
@@ -26,6 +36,6 @@ return function (App $app): void {
         $group->get('/estado/{estado}', [$reservaRepository, 'listarPorEstado']);
         $group->get('/{id}', [$reservaRepository, 'obtener']);
         $group->put('/{id}', [$reservaRepository, 'actualizar']);
-        $group->patch('/{id}/cancelar', [$reservaRepository, 'cancelar']);
+        $group->post('/{id}/cancelar', [$reservaRepository, 'cancelar']);
     });
 };

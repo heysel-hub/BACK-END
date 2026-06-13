@@ -8,6 +8,15 @@ use App\Presentation\Repositories\ProductosRepository;
 return function (App $app): void {
     $repository = new ProductosRepository();
 
+    $app->get('/', function ($request, $response) {
+    $response->getBody()->write(json_encode([
+        'status' => 'ok',
+        'microservicio' => 'Gestión de Productos funcionando'
+    ]));
+
+    return $response->withHeader('Content-Type', 'application/json');
+});
+
     $app->group('/productos', function (RouteCollectorProxy $group) use ($repository) {
         $group->get('', [$repository, 'listar']);
         $group->post('', [$repository, 'crear']);

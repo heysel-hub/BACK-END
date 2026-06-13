@@ -1,5 +1,5 @@
-CREATE DATABASE ms_auth;
-USE ms_auth;
+CREATE DATABASE ms_auth_db;
+USE ms_auth_db;
 CREATE TABLE usuarios ( 
 id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 nombre VARCHAR(100) NOT NULL, 
